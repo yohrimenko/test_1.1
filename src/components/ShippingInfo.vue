@@ -3,16 +3,16 @@
             <h1>Shipping Info</h1>
               <div class="recipient">
                 <label for="fname"><i class="user"></i> Recipient</label>
-                <input type="text" id="fname" name="fulltname" placeholder="Full Name">
+                <input type="text" id="fname" required="required" name="fulltname" placeholder="Full Name">
                 <div class="tel-input">
-                <input type="tel" name="usrtel" placeholder="Daytime phone">
+                <input type="tel" required="required" name="usrtel" placeholder="Daytime phone">
                 <span>For delivery <br> questions only</span>
                 </div>
               </div>
               <div class="address">
                 <label for="fname"><i class="user"></i> Address</label>
-                <input type="text" id="faddress" name="address" placeholder="Street Address">
-                <input type="text" placeholder="Apt, Suite, Bldg, Gate Code">
+                <input type="text" required="required" autocomplete="on" id="faddress" name="address" placeholder="Street Address">
+                <input type="text" autocomplete="on" placeholder="Apt, Suite, Bldg, Gate Code">
 
                 <div class="select-block">
                   <select id="stateSelect" onchange="stateSelected();" class="selector">
@@ -26,12 +26,14 @@
                     <option value="stateUSA">USA</option>
                     <option value="stateUkraine">Ukraine</option>
                   </select>
-                  <input class="zip-input" type="text" placeholder="ZIP">
+                  <input required="required" autocomplete="on" pattern="[0-9]*" maxlength="5" class="zip-input" type="text" placeholder="ZIP">
                 </div>
               </div>
               <button>Continue</button>
         </div>
 </template>
+
+
 
 <style scoped>
 

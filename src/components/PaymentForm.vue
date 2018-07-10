@@ -8,21 +8,31 @@
               </div>
               <div class="card-number">
                 <label for="fname"><i class="user"></i> Card Number</label>
-                <input type="text" id="fnum" name="fulltname" placeholder="XXXX XXXX XXXX XXXX XXXX">
+                
+                <the-mask class="card-masked" mask="#### #### #### #### ####" type="text" placeholder="XXXX XXXX XXXX XXXX XXXX"></the-mask>
               </div>
               <div class="bottom-container">
                 <div class="expire-date">
                   <label for="fname"><i class="user"></i> Expire Date</label>
-                  <input type="text" id="date" name="fulltname" placeholder="MM / YY">
+                  <the-mask type="text" mask="##/##" placeholder="MM / YY"></the-mask>
                 </div>
                 <div class="security-code">
                   <label for="fname"><i class="user"></i> Security Code</label>
-                  <input type="text" id="date" name="fulltname" placeholder="">
+                  <the-mask type="text" mask="###" placeholder=""></the-mask>
                 </div>
               </div>
               <button>Pay Securely</button>
         </div>
 </template>
+
+<script>
+  import {TheMask} from 'vue-the-mask'
+
+  export default {
+    components: {TheMask}
+  }
+</script>
+
 
 <style lang="scss" scoped>
 
@@ -85,7 +95,7 @@ h1 {
   margin-top: 10px;
 }
 
- input {
+ input, .card-masked {
   width: 100%;
   height: 50px;
   box-sizing: border-box;
