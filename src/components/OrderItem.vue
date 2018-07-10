@@ -1,16 +1,18 @@
 <template>
     <div class="order-item">
-        <img src="https://www.shoezone.com/Images/Product/58502_T01.20171101000059.jpg" alt="" class="item-pic">
+        <img :src="thumbnail" alt="" class="item-pic">
         <div class="right-block">
-            <h3>The chelsea boot<span class="item-price">$235</span></h3>
-            <p class="discription">Black</p>
-            <p class="quantity">Quantity: 1</p>
+            <h3>{{ title }}<span class="item-price">${{ price }}</span></h3>
+            <p class="discription">{{ description }}</p>
+            <p class="quantity">Quantity: {{ quantity }}</p>
         </div>
     </div>    
 </template>
 
 <script>
-    
+    export default {
+        props: ['title', 'description', 'thumbnail', 'price', 'quantity']
+    }
 </script>
 
 <style lang="scss" scoped>

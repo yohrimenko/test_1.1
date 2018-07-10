@@ -5,15 +5,19 @@
             <h2>Order summary<a href="#">edit order</a></h2>
         </div>
 
-        <order-item></order-item>
-        <order-item></order-item>
-        <order-item></order-item>
+        <order-item :key="item.id" v-for="item in data.items" 
+                    :title="item.title"
+                    :description="item.description"
+                    :quantity="item.quantity"
+                    :thumbnail="item.thumbnail"
+                    :price="item.price">
+        </order-item>
 
 
         <div class="order-price">
             <h3 class="cart-line">
                 Subtotal
-                <span class="cart-price">$398</span>
+                <span class="cart-price">${{ getSubtotal }}</span>
             </h3>
             <h3 class="cart-line">
                 Shipping
@@ -27,7 +31,7 @@
         <div class="total-price">
             <h3 class="cart-total">
                 Total
-                <span class="cart-price">$410.12</span>
+                <span class="cart-price">${{ getTotal }}</span>
             </h3>
         </div>
     </div>
@@ -106,6 +110,32 @@
 import OrderItem from './OrderItem.vue';
 
 export default {
+    data() {
+        return {
+            data: {
+                items: [],
+                shippingPrice: 0
+            }   
+        }    
+    },  
+    computed: {
+        getSubtotal() {
+        return this.data.items.reduce(
+            (a, b) => parseFloat(a + b.price * b.quantity),
+            0
+        )
+        },
+        getTotal() {
+        return (
+            parseFloat(this.getSubtotal + this.data.shippingPrice + this.data.taxPrice)
+        )
+        }
+    },
+    created() {
+        fetch('./src/assets/products.json')
+        .then(response => response.json())
+        .then(json => (this.data = json))
+    },
     components: {
         'order-item': OrderItem
     }

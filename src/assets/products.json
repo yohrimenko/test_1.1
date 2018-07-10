@@ -1,0 +1,27 @@
+{
+    "items": [
+      {
+        "title": "The chelsea boot",
+        "description": "Black",
+        "thumbnail": "https://www.shoezone.com/Images/Product/58502_T01.20171101000059.jpg",
+        "quantity": 1,
+        "price": 235
+      },
+      {
+        "title": "The Twill Snap Backpack",
+        "description": "Reverse denim + Brown leather",
+        "thumbnail": "https://www.wannaccess.com/13618-cart_default/ranger-backpack-tan-filson-filson-70381-ranger-backpack-tan.jpg",
+        "quantity": 1,
+        "price": 65
+      },
+      {
+        "title": "The twill zip tote",
+        "description": "Reverse denim + Black leather",
+        "thumbnail": "https://images.bloomingdales.com/is/image/BLM/products/0/optimized/9661080_fpx.tif?wid=80&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg",
+        "quantity": 1,
+        "price": 48
+      }
+    ],
+    "shippingPrice": 0,
+    "taxPrice": 12.12
+  }
