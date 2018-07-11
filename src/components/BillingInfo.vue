@@ -1,6 +1,6 @@
 <template>
     <div class="checkout-info">
-          <form @submit.prevent="processForm">
+          <form id="testBillForm" @submit.prevent="processForm">
             <h1>Billing Information<a href="#">Same as shipping</a></h1>
 
             <div class="recipient">
@@ -57,7 +57,7 @@
                 <input required="required" autocomplete="on" pattern="[0-9]*" maxlength="5" class="zip-input" type="text" placeholder="ZIP" name="zip">
               </div>
             </div>
-            <button type="submit" >Continue</button>
+            <button id="submitBillButton" type="submit" >Continue</button>
           </form>
         </div>
 </template>
@@ -89,6 +89,14 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:500');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+form input:focus {
+  border: 2px solid #EDEEF4;
+}
+
+form.submitted input:invalid{
+  background:rgb(255, 239, 239);
+}
 
 label {
   margin-bottom: 10px;

@@ -2,7 +2,7 @@
     <div class="checkout-info">
             <h1>Payment</h1>
             <p>This is a secure 128-bit SSL encrypted payment</p>
-            <form>
+            <form id="testForm" @submit.prevent="processForm">
               <div class="cartholder-name">
                 <label for="name"> Cardholder Name</label>
                 <input 
@@ -45,7 +45,7 @@
                   </the-mask>
                 </div>
               </div>
-              <button type="submit" >Pay Securely</button>
+              <button id="submitButton" type="submit" >Pay Securely</button>
             </form>
         </div>
 </template>
@@ -54,8 +54,15 @@
   import {TheMask} from 'vue-the-mask'
 
   export default {
+    props: ['next-step'],
+    methods: {
+      processForm: function(){
+        this.nextStep('CheckoutSuccess');
+      }
+    },
     components: {TheMask}
   }
+  
 </script>
 
 
@@ -64,6 +71,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:500');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+form input:focus {
+  border: 2px solid #EDEEF4;
+}
+
+form.submitted input:invalid{
+  background:rgb(255, 239, 239);
+}
 
 label {
   margin-bottom: 10px;

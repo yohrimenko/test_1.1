@@ -1,6 +1,6 @@
 <template>
     <div class="checkout-info">
-      <form @submit.prevent="processForm">
+      <form id="testForm" @submit.prevent="processForm">
           <h1>Shipping Info</h1>
             <div class="recipient">
               <label for="name"> Recipient</label>
@@ -60,7 +60,7 @@
                 <input required="required" autocomplete="on" pattern="[0-9]*" maxlength="6" class="zip-input" type="text" placeholder="ZIP" name="zip">
               </div>
             </div>
-            <button type="submit" >Continue</button>
+            <button  id="submitButton" type="submit" >Continue</button>
           </form>
         </div>
 </template>
@@ -68,7 +68,10 @@
 <script>
 import {TheMask} from 'vue-the-mask'
 
+
+
 export default {
+  
   data() {
     return {
       client: {
@@ -87,7 +90,9 @@ export default {
     }
   },
   components: {TheMask}
+  
 }
+
 </script>
 
 
@@ -97,6 +102,16 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:500');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+form input:focus {
+  border: 2px solid #EDEEF4;
+}
+
+form.submitted input:invalid{
+  background:rgb(255, 239, 239);
+}
+
+
 
 label {
   margin-bottom: 10px;
@@ -188,6 +203,8 @@ h1 {
   color: #212121;
 }
 
+
+
 #address {
     margin-top: 0;
 }
@@ -210,6 +227,7 @@ select {
   -moz-appearance: none;
   font-family: 'Roboto';
 }
+
 #citySelect{
     background-image: url("https://cdn3.iconfinder.com/data/icons/web-icons-1/64/Crosshair-512.png");
     background-size: 30px;
@@ -237,4 +255,21 @@ button {
   font-family: 'Roboto';
   font-weight: bold;
 }
+
+ @media only screen and (max-width: 1110px)  {
+	.recipient, .address{
+    width: 300px;
+  }
+  #countrySelect {
+    width: 180px;
+  }
+
+  .address .zip-input {
+    width: 100px;
+    margin-left: 15px;
+  }
+  .tel-input input, button {
+    width: 180px;
+  }
+	}
 </style>

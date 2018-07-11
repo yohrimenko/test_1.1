@@ -31,6 +31,7 @@
 nav {
   font-size: 16px;
   width: 70%;
+  max-width: 905px;
   height: 55px;
   margin: auto;
   font-family: 'Roboto', Helvetica, sans-serif;

@@ -5,3 +5,6 @@ new Vue({
   el: '#app',
   render: h => h(App)
 })
+document.getElementById("submitButton").addEventListener("click", function(){
+	document.getElementById("testForm").className="submitted";
+});

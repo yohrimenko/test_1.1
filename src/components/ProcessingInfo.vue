@@ -16,6 +16,7 @@
 import ShippingInfo from './ShippingInfo.vue';
 import BillingInfo from './BillingInfo.vue';
 import PaymentForm from './PaymentForm.vue';
+import CheckoutSuccess from './CheckoutSuccess.vue';
 
 export default {
     data: function(){
@@ -28,7 +29,8 @@ export default {
     components: {
         'Shipping': ShippingInfo,
         'Billing': BillingInfo,
-        'Payment': PaymentForm
+        'Payment': PaymentForm,
+        'CheckoutSuccess': CheckoutSuccess
     },
     methods: {
         nextStep: function (step) {

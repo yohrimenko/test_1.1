@@ -31,18 +31,21 @@ export default {
   background: #e5e7f0;
  } 
 
+#app {
+  
+}
+
  .grid-container {
+    margin: 50px auto;
     display: grid;
     width: 70%;
-    margin-top: 50px;
-    margin-left: 15%;
-    margin-bottom: 5%;
+    max-width: 905px;
     box-shadow: 0 1px 10px 0 rgba(0,0,0,0.05), 0 1px 15px 0 rgba(0,0,0,0.1);
     border-radius: 5px; 
     background-color: #fff;
     grid-template-areas:
-     "processing-info"
-     "order-list"
+      "order-list"
+      "processing-info"
  }
 
  @media only screen and (min-width: 700px)  {
@@ -50,7 +53,7 @@ export default {
 
 		grid-template-columns: 5fr 4fr;
 		grid-template-areas:
-    "processing-info   order-list"
+    "processing-info order-list"
 	}
 	}
 
