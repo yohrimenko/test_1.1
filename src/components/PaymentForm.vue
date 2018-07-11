@@ -2,26 +2,51 @@
     <div class="checkout-info">
             <h1>Payment</h1>
             <p>This is a secure 128-bit SSL encrypted payment</p>
+            <form>
               <div class="cartholder-name">
-                <label for="fname"><i class="user"></i> Cardholder Name</label>
-                <input type="text" id="fname" name="fulltname" placeholder="Name as it appears on your card">
+                <label for="name"> Cardholder Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="fulltname" 
+                  required="required" 
+                  placeholder="Name as it appears on your card">
               </div>
               <div class="card-number">
-                <label for="fname"><i class="user"></i> Card Number</label>
-                
-                <the-mask class="card-masked" mask="#### #### #### #### ####" type="text" placeholder="XXXX XXXX XXXX XXXX XXXX"></the-mask>
+                <label for="card"> Card Number</label>
+                <the-mask 
+                  class="card-masked" 
+                  mask="#### #### #### ####" 
+                  required="required" 
+                  type="text" 
+                  name="card"
+                  placeholder="XXXX XXXX XXXX XXXX">
+                </the-mask>
               </div>
               <div class="bottom-container">
                 <div class="expire-date">
-                  <label for="fname"><i class="user"></i> Expire Date</label>
-                  <the-mask type="text" mask="##/##" placeholder="MM / YY"></the-mask>
+                  <label for="date"> Expire Date</label>
+                  <the-mask 
+                    type="text" 
+                    mask="##/##" 
+                    placeholder="MM / YY"
+                    name="date">
+                    
+                  </the-mask>
                 </div>
                 <div class="security-code">
-                  <label for="fname"><i class="user"></i> Security Code</label>
-                  <the-mask type="text" mask="###" placeholder=""></the-mask>
+                  <label for="code"> Security Code</label>
+                  <the-mask 
+                    type="text" 
+                    mask="###" 
+                    placeholder=""
+                    name="code">
+                    
+                  </the-mask>
                 </div>
               </div>
-              <button>Pay Securely</button>
+              <button type="submit" >Pay Securely</button>
+            </form>
         </div>
 </template>
 

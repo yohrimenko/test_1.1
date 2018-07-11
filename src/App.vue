@@ -16,6 +16,7 @@ import ProcessingInfo from './components/ProcessingInfo.vue';
 
 export default {
   name: 'app',
+  
   components: {
     NavBar,
     OrderList,
@@ -31,15 +32,26 @@ export default {
  } 
 
  .grid-container {
-    display: inline-grid;
+    display: grid;
     width: 70%;
     margin-top: 50px;
     margin-left: 15%;
     margin-bottom: 5%;
     box-shadow: 0 1px 10px 0 rgba(0,0,0,0.05), 0 1px 15px 0 rgba(0,0,0,0.1);
     border-radius: 5px; 
-    grid-template-columns: 5fr 4fr;
     background-color: #fff;
+    grid-template-areas:
+     "processing-info"
+     "order-list"
  }
+
+ @media only screen and (min-width: 700px)  {
+	.grid-container {
+
+		grid-template-columns: 5fr 4fr;
+		grid-template-areas:
+    "processing-info   order-list"
+	}
+	}
 
 </style>

@@ -2,12 +2,12 @@
           <div class="shipping-info">
             <div class="checkout-navbar">
                 <ul>
-                    <li @click="switchView('shipping-info')">Shipping</li>
-                    <li @click="switchView('billing-info')">Billing</li>
-                    <li @click="switchView('payment-form')">Payment</li>
+                    <li v-for="step in steps" :key="step" v-bind:class="{ active: currentStep == step}"> 
+                        <span @click="currentStep = step">{{ step }}</span>
+                    </li>
                 </ul>
             </div>
-            <component :is="currentVue"></component>
+            <component :is="currentStep" :next-step.sync="nextStep"></component>
           </div>
 </template>
 
@@ -20,19 +20,19 @@ import PaymentForm from './PaymentForm.vue';
 export default {
     data: function(){
             return {
-                currentVue: 'shipping-info',
-                isActive: true
+                steps: ['Shipping', 'Billing', 'Payment'],
+                completedSteps: [],
+                currentStep: 'Shipping'
             }
         },
     components: {
-        'shipping-info': ShippingInfo,
-        'billing-info': BillingInfo,
-        'payment-form': PaymentForm
+        'Shipping': ShippingInfo,
+        'Billing': BillingInfo,
+        'Payment': PaymentForm
     },
     methods: {
-        switchView: function(view) {
-            this.currentVue = view;
-            this.isActive = !this.isActive;
+        nextStep: function (step) {
+            this.currentStep = step;
         }
     } 
 }
