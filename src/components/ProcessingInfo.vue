@@ -47,6 +47,10 @@ export default {
 
     .shipping-info {
         margin: 0 auto;
+        width: 80%;
+    }
+    .checkout-navbar{
+        min-width: 275px;
     }
 
     ul {
@@ -60,6 +64,7 @@ export default {
             color: #8c8f8f;
             font-size: 85%;
             margin-right: 20px;
+            
             
         }
         .active {
@@ -82,6 +87,9 @@ export default {
                 display: inline;
                 content: none;
             }
+        li:last-child {
+            margin-right: 0;
+        }
     }
 </style>
 

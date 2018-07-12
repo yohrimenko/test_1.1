@@ -1,5 +1,5 @@
 <template>
-    <div class="checkout-info">
+    <div class="container">
       <form id="testForm" @submit.prevent="processForm">
           <h1>Shipping Info</h1>
             <div class="recipient">
@@ -49,15 +49,17 @@
                     <option value="cityKiev">Kiev</option>
                     <option value="cityOdessa">Odessa</option>
                 </select>
-                <select 
-                  id="countrySelect" 
-                  onchange="countrySelected();" 
-                  class="selector">
-                    <option value="" selected="selected">Country</option>
-                    <option value="countryUSA">USA</option>
-                    <option value="countryUkraine">Ukraine</option>
-                </select>
-                <input required="required" autocomplete="on" pattern="[0-9]*" maxlength="6" class="zip-input" type="text" placeholder="ZIP" name="zip">
+                <div class="container-inline">
+                  <select 
+                    id="countrySelect" 
+                    onchange="countrySelected();" 
+                    class="selector">
+                      <option value="" selected="selected">Country</option>
+                      <option value="countryUSA">USA</option>
+                      <option value="countryUkraine">Ukraine</option>
+                  </select>
+                  <input required="required" autocomplete="on" pattern="[0-9]*" maxlength="6" class="zip-input" type="text" placeholder="ZIP" name="zip">
+                </div>
               </div>
             </div>
             <button  id="submitButton" type="submit" >Continue</button>
@@ -67,8 +69,6 @@
 
 <script>
 import {TheMask} from 'vue-the-mask'
-
-
 
 export default {
   
@@ -95,161 +95,6 @@ export default {
 
 </script>
 
+<style src="../styles/formComponents.scss" lang="scss" scoped>
 
-
-<style scoped>
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:500');
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
-
-form input:focus {
-  border: 2px solid #EDEEF4;
-}
-
-form.submitted input:invalid{
-  background:rgb(255, 239, 239);
-}
-
-
-
-label {
-  margin-bottom: 10px;
-  display: block;
-  color: #650091;
-  font-size: 130%;
-}
-
-h1 {
-  color: #650091;
-  font-weight: normal;
-}
-
-.checkout-info {
-  width: 100%;
-  background: #fff;
-  border-radius: 5px 0 0 5px; 
-  font-family: 'Roboto','Helvetica Neue', Arial, sans-serif;
-  font-size: 14px;
-  margin-bottom: 15%;
-}
-
-.shipping-info{
-  width: 100%;
-  margin: 40px;
-}
-
-.recipient {
-  width: 400px;
-  margin-top: 10px;
-}
-
-input {
-  width: 100%;
-  height: 50px;
-  box-sizing: border-box;
-  outline: none;
-  padding: 15px;
-  font-size: 130%;
-  background: none;
-  border: 1px solid #DDDBDB;
-  border-radius: 5px; 
-  box-shadow: 1px 1px #F4F3F3;
-  color: #212121;
-  text-transform: capitalize;
-  font-family: 'Roboto';
-  margin-bottom: 10px;
-}
-
-.tel-input input {
-  vertical-align:middle;
-  box-sizing:border-box;
-  width: 250px;
-  padding: 15px;
-  font-size: 120%;
-  color: #212121;
-}
-
-.tel-input span {
-  display: inline-block;
-  vertical-align:middle;
-  margin-left: 5px;
-  color: #8c8f8f;
-  font-size: 120%;
-}
-
-.address {
-  margin-top: 30px;
-  width: 400px;
-}
-
-
-#address {
-    margin-top: 0;
-}
-
-select {
-  width: 100%;
-  height: 50px;
-  box-sizing: border-box;
-  outline: none;
-  margin-top: 20px; 
-  font-size: 120%;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/VisualEditor_-_Icon_-_Expand.svg") no-repeat 95% center;
-  background-size: 25px;
-  border: 1px solid #DDDBDB;
-  border-radius: 5px; 
-  box-shadow: 1px 1px #F4F3F3;
-  color: #8c8f8f;
-  padding-left: 15px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  font-family: 'Roboto';
-}
-
-#citySelect{
-    background-image: url("https://cdn3.iconfinder.com/data/icons/web-icons-1/64/Crosshair-512.png");
-    background-size: 30px;
-    margin-top: 10px;
-}
-
-#countrySelect {
-  width: 240px;
-}
-
-.address .zip-input {
-  width: 140px;
-  margin-left: 15px;
-}
-
-button {
-  width: 240px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #650091;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 120%;
-  font-family: 'Roboto';
-  font-weight: bold;
-}
-
- @media only screen and (max-width: 1110px)  {
-	.recipient, .address{
-    width: 300px;
-  }
-  #countrySelect {
-    width: 180px;
-  }
-
-  .address .zip-input {
-    width: 100px;
-    margin-left: 15px;
-  }
-  .tel-input input, button {
-    width: 180px;
-  }
-	}
 </style>

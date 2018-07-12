@@ -45,8 +45,8 @@ export default {
     border-radius: 5px; 
     background-color: #fff;
     grid-template-areas:
-      "order-list"
-      "processing-info"
+      "ol"
+      "pi"
  }
 
  @media only screen and (min-width: 700px)  {
@@ -54,7 +54,7 @@ export default {
     width: 70%;
 		grid-template-columns: 5fr 4fr;
 		grid-template-areas:
-    "processing-info order-list"
+    "pi ol"
 	}
 	}
 
