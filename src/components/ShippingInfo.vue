@@ -210,6 +210,7 @@ select {
 #citySelect{
     background-image: url("https://cdn3.iconfinder.com/data/icons/web-icons-1/64/Crosshair-512.png");
     background-size: 30px;
+    margin-top: 10px;
 }
 
 #countrySelect {

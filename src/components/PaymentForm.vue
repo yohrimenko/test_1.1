@@ -116,12 +116,11 @@ h1 {
 }
  .expire-date, .security-code{
       display: inline-block;
-      margin-right: 30px;
-
-      input {
-        width: 140px;
-      }
+      width: 140px;
     }
+  .security-code {
+    margin-left: 10px;
+  }
 .bottom-container{
   width: 400px;
 }
@@ -169,5 +168,21 @@ button {
   font-size: 120%;
   font-family: 'Roboto';
   font-weight: bold;
+}
+
+ @media only screen and (max-width: 1110px)  {
+   h1 a {
+     float: none;
+     margin-left: 20px;
+     display: none;
+   }
+	.cartholder-name, .card-number, .bottom-container{
+    width: 300px;
+  }
+
+  button {
+    width: 180px;
+  }
+
 }
 </style>

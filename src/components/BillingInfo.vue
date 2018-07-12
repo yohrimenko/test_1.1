@@ -1,7 +1,7 @@
 <template>
     <div class="checkout-info">
           <form id="testBillForm" @submit.prevent="processForm">
-            <h1>Billing Information<a href="#">Same as shipping</a></h1>
+            <div class="wrapper"><h1>Billing Information<a href="#">Same as shipping</a></h1></div>
 
             <div class="recipient">
                 <label for="name"> Billing Contact</label>
@@ -82,8 +82,6 @@ export default {
   }
 }
 </script>
-
-
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:500');
@@ -97,6 +95,7 @@ form input:focus {
 form.submitted input:invalid{
   background:rgb(255, 239, 239);
 }
+
 
 label {
   margin-bottom: 10px;
@@ -112,10 +111,12 @@ h1 {
 
 h1 a {
   color: #650091;
-  float: right;
   font-size: 60%;
-  line-height: 235%;
+  line-height: 300%;
+  float: right;
+  
 }
+
 .checkout-info {
   width: 100%;
   background: #fff;
@@ -135,7 +136,7 @@ h1 a {
   margin-top: 10px;
 }
 
-.recipient input {
+input {
   width: 100%;
   height: 50px;
   box-sizing: border-box;
@@ -149,11 +150,24 @@ h1 a {
   color: #212121;
   text-transform: capitalize;
   font-family: 'Roboto';
-  
+  margin-bottom: 10px;
 }
 
-#email {
-  margin-top: 10px;
+.tel-input input {
+  vertical-align:middle;
+  box-sizing:border-box;
+  width: 250px;
+  padding: 15px;
+  font-size: 120%;
+  color: #212121;
+}
+
+.tel-input span {
+  display: inline-block;
+  vertical-align:middle;
+  margin-left: 5px;
+  color: #8c8f8f;
+  font-size: 120%;
 }
 
 .address {
@@ -161,21 +175,6 @@ h1 a {
   width: 400px;
 }
 
-.address input {
-  width: 100%;
-  height: 50px;
-  box-sizing: border-box;
-  outline: none;
-  padding: 15px;
-  margin-top: 10px; 
-  font-size: 120%;
-  background: none;
-  border: 1px solid #DDDBDB;
-  border-radius: 5px; 
-  box-shadow: 1px 1px #F4F3F3;
-  font-family: 'Roboto';
-  color: #212121;
-}
 
 #address {
     margin-top: 0;
@@ -199,9 +198,11 @@ select {
   -moz-appearance: none;
   font-family: 'Roboto';
 }
+
 #citySelect{
     background-image: url("https://cdn3.iconfinder.com/data/icons/web-icons-1/64/Crosshair-512.png");
     background-size: 30px;
+    margin-top: 10px;
 }
 
 #countrySelect {
@@ -226,4 +227,26 @@ button {
   font-family: 'Roboto';
   font-weight: bold;
 }
+
+ @media only screen and (max-width: 1110px)  {
+   h1 a {
+     float: none;
+     margin-left: 20px;
+     display: none;
+   }
+	.recipient, .address{
+    width: 300px;
+  }
+  #countrySelect {
+    width: 180px;
+  }
+
+  .address .zip-input {
+    width: 100px;
+    margin-left: 15px;
+  }
+  .tel-input input, button {
+    width: 180px;
+  }
+	}
 </style>
