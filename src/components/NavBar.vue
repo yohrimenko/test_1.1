@@ -29,7 +29,7 @@
 }
 
 nav {
-  font-size: 16px;
+  font-size: 100%;
   width: 70%;
   max-width: 905px;
   height: 55px;

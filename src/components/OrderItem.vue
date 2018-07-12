@@ -61,6 +61,13 @@
     }
 }
 
+ @media only screen and (max-width: 1000px)  {
+	h3{
+        font-size: 70%;
+    }
+ }
+
+
 
 </style>
 

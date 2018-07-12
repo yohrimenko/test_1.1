@@ -79,6 +79,8 @@ export default {
 
         li:last-child::after {
                 background: none;
+                display: inline;
+                content: none;
             }
     }
 </style>
