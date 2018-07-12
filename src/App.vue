@@ -58,4 +58,11 @@ export default {
 	}
 	}
 
+@media only screen and (max-width: 374px)  {
+	.grid-container {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0;
+	}
+}
 </style>

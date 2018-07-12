@@ -144,7 +144,7 @@ h1 {
   margin-top: 10px;
 }
 
-.recipient input {
+input {
   width: 100%;
   height: 50px;
   box-sizing: border-box;
@@ -158,11 +158,7 @@ h1 {
   color: #212121;
   text-transform: capitalize;
   font-family: 'Roboto';
-  
-}
-
-.tel-input {
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .tel-input input {
@@ -186,23 +182,6 @@ h1 {
   margin-top: 30px;
   width: 400px;
 }
-
-.address input {
-  width: 100%;
-  height: 50px;
-  box-sizing: border-box;
-  outline: none;
-  padding: 15px;
-  margin-top: 10px; 
-  font-size: 120%;
-  background: none;
-  border: 1px solid #DDDBDB;
-  border-radius: 5px; 
-  box-shadow: 1px 1px #F4F3F3;
-  font-family: 'Roboto';
-  color: #212121;
-}
-
 
 
 #address {

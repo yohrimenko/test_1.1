@@ -30,7 +30,7 @@
 
 nav {
   font-size: 100%;
-  width: 70%;
+  width: 85%;
   max-width: 905px;
   height: 55px;
   margin: auto;
@@ -44,7 +44,7 @@ nav {
         display: inline;
         text-transform: capitalize;
         color: #690094;
-        font-size: 150%;
+        font-size: 95%;
         font-family: 'Roboto','Open Sans', sans-serif;
         font-weight: normal;
 
@@ -60,7 +60,7 @@ nav {
       a {
         color: #E63EBA;
         text-decoration: none;
-        font-size: 120%;
+        font-size: 90%;
         font-family: 'Roboto','Open Sans', sans-serif;
         
         &:hover {
@@ -70,6 +70,43 @@ nav {
     }
   }
 }
+
+@media only screen and (min-width: 700px)  {
+	nav {
+    width: 70%;
+
+    .navbar-left {
+      li {
+        font-size: 150%;
+      }
+    }
+
+    .navbar-right{
+      a {
+        font-size: 120%;
+      }
+    }
+	}
+}
+
+@media only screen and (max-width: 374px)  {
+	nav {
+    width: 95%;
+
+    .navbar-left {
+      li {
+        font-size: 90%;
+      }
+    }
+
+    .navbar-right{
+      a {
+        font-size: 85%;
+      }
+    }
+	}
+}
+
 </style>
 
 <script>
